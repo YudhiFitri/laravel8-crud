@@ -20,7 +20,7 @@ class EmployeeController extends Controller
         if($req->has('search')){
             $data = Employee::where('nama', 'LIKE', '%' . $req->search .'%')->paginate(5);
         }else{
-            $data = Employee::paginate(5);
+            $data = Employee::paginate(10);
         }
         // dd($data);
         return view('datapegawai', compact('data'));
